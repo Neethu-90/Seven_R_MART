@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+<parameter name="browser" value="chrome"></parameter>
+<listeners>
+<listener class-name="generatereport.Listeners"></listener>
+</listeners>
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="testscript1.AdminTest"/>
+      <class name="testscript1.LoginTest"/>
+      <class name="testscript1.ManageCategoryTest"/>
+      <class name="testscript1.LogoutTest"/>
+      <class name="testscript1.ManageFooterTest"/>
+      <class name="testscript1.ManageContactTest"/>
+      <class name="testscript1.MnageNewsTest"/>
+     </classes>
+ </test> <!-- Test -->
+</suite> <!-- Suite -->

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="tests" name="Failed suite [MultiBrowserTesting]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="tests" name="FirefoxTest(failed)">
+    <parameter name="browser" value="Firefox"/>
+    <classes>
+      <class name="testscript1.LoginTest">
+        <methods>
+          <include name="driverQuit"/>
+          <include name="browserInitialization"/>
+          <include name="verifyUserIsAbleToLoginWithValidCredentials"/>
+        </methods>
+      </class> <!-- testscript1.LoginTest -->
+      <class name="testscript1.ManageFooterTest">
+        <methods>
+          <include name="validateUserCanUpdateFooterInfo"/>
+          <include name="driverQuit"/>
+          <include name="browserInitialization"/>
+          <include name="validateUpdateButtonIsDisplayed"/>
+        </methods>
+      </class> <!-- testscript1.ManageFooterTest -->
+    </classes>
+  </test> <!-- FirefoxTest(failed) -->
+</suite> <!-- Failed suite [MultiBrowserTesting] -->

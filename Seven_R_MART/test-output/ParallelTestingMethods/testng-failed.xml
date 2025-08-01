@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite parallel="methods" name="Failed suite [paralleltestingmethods]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" parallel="methods" name="ChromeTest(failed)">
+    <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="testscript1.ManageFooterTest">
+        <methods>
+          <include name="validateUserCanUpdateFooterInfo"/>
+          <include name="driverQuit"/>
+          <include name="browserInitialization"/>
+          <include name="validateUpdateButtonIsDisplayed"/>
+        </methods>
+      </class> <!-- testscript1.ManageFooterTest -->
+    </classes>
+  </test> <!-- ChromeTest(failed) -->
+</suite> <!-- Failed suite [paralleltestingmethods] -->

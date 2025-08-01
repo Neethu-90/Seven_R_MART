@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT" verbose="0">
+  <parameter name="browser" value="chrome"/>
+  <listeners>
+    <listener class-name="generatereport.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="Test(failed)" verbose="0">
+    <classes>
+      <class name="testscript1.AdminTest">
+        <methods>
+          <include name="verifyAlertIsDisplayedAfterUpdate"/>
+          <include name="browserQuit"/>
+          <include name="browserInitialization"/>
+          <include name="validateUpdateButtonIsEnabled"/>
+          <include name="verifyAdminCanUpdateField"/>
+        </methods>
+      </class> <!-- testscript1.AdminTest -->
+      <class name="testscript1.ManageCategoryTest">
+        <methods>
+          <include name="verifyUserIsAbleToLoginWithValidCredentials"/>
+          <include name="browserQuit"/>
+          <include name="browserInitialization"/>
+        </methods>
+      </class> <!-- testscript1.ManageCategoryTest -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
