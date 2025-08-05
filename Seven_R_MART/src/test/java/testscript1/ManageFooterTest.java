@@ -6,28 +6,33 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import constant.Messages;
+import pages.HomePage;
 import pages.LoginPage;
 import pages.ManageFooterPage;
 import utility.ExcelUtility;
 
 public class ManageFooterTest extends Base {
+	ManageFooterPage managefooter;
+	HomePage homepage;
 	@Test(description = "Verify that the user can update footer information including address and email successfully.")
 	public void validateUserCanUpdateFooterInfo() throws IOException {
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsername(username);
-		loginpage.enterPassword(password);
-		loginpage.clickLogin();
+		loginpage.enterUsername(username).enterPassword(password);
+		//loginpage.enterPassword(password);
+		homepage=loginpage.clickLogin();
 
-		ManageFooterPage managefooter = new ManageFooterPage(driver);
-		managefooter.clickMoreinfo();
+		//ManageFooterPage managefooter = new ManageFooterPage(driver);
+		//managefooter.clickManageFooterMoreinfo();
+		managefooter=homepage.clickManageFooterMoreinfo();
 		managefooter.clickAction();
 		String newaddress = ExcelUtility.getStringData(1, 0, "managefooter");
 		managefooter.Addaddress(newaddress);
 		String newemail = ExcelUtility.getStringData(1, 1, "managefooter");
 		managefooter.AddEmail(newemail);
 		managefooter.updateDetails();
+		
 		boolean alerts = managefooter.isAlertDisplayed();
 		Assert.assertTrue(alerts, Messages.FOOTERUPDATEALERTNOTDISPLAYED);
 
@@ -38,12 +43,12 @@ public class ManageFooterTest extends Base {
 		String username = ExcelUtility.getStringData(1, 0, "loginpage");
 		String password = ExcelUtility.getStringData(1, 1, "loginpage");
 		LoginPage loginpage = new LoginPage(driver);
-		loginpage.enterUsername(username);
-		loginpage.enterPassword(password);
-		loginpage.clickLogin();
+		loginpage.enterUsername(username).enterPassword(password);
+		//loginpage.enterPassword(password);
+		homepage=loginpage.clickLogin();
 
-		ManageFooterPage managefooter = new ManageFooterPage(driver);
-		managefooter.clickMoreinfo();
+		//ManageFooterPage managefooter = new ManageFooterPage(driver);
+		managefooter=homepage.clickManageFooterMoreinfo();
 		managefooter.clickAction();
 		Boolean updatebtn = managefooter.isUpadateButtonDisplayed();
 		Assert.assertTrue(updatebtn, Messages.FOOTERUPDATEBUTTONNOTDISPLAYED);

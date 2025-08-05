@@ -15,8 +15,8 @@ import utility.WaitUtility;
 
 public class ManageCategoryPage {
 
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category' and @class='small-box-footer']")
-	WebElement moreinfo;
+	//@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-category' and @class='small-box-footer']")
+	//WebElement managecategorymoreinfo;
 	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/Category/add']")
 	WebElement newbtn;
 	@FindBy(xpath = "//input[@class='form-control' and @id='category']")
@@ -35,21 +35,24 @@ public class ManageCategoryPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickMoreInfo() {
-		moreinfo.click();
-	}
+	/*public void clickManageCategoryMoreInfo() {
+		managecategorymoreinfo.click();
+	}*/
 
-	public void clickNewButton() {
+	public ManageCategoryPage clickNewButton() {
 		newbtn.click();
+		return this;
 	}
 
-	public void enterCategory(String categoryname) {
+	public ManageCategoryPage enterCategory(String categoryname) {
 		category.sendKeys(categoryname);
+		return this;
 	}
 
-	public void choosefileUpload(String categoryimage2) {
+	public ManageCategoryPage choosefileUpload(String categoryimage2) {
 		FileUploadUtility fileupload = new FileUploadUtility();
 		fileupload.fileUploadUsingSendKeys(choosefile, categoryimage2);
+		return this;
 	}
 
 	public boolean isImagePreviewDisplayed() {

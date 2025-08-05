@@ -8,8 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import utility.PageUtility;
 
 public class ManageNews {
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news'and@class='small-box-footer']")
-	WebElement moreinfo;
+	//@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-news'and@class='small-box-footer']")
+	//WebElement managenewsmoreinfo;
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	WebElement newbtn;
 	@FindBy(xpath = "//textarea[@id='news']")
@@ -27,29 +27,32 @@ public class ManageNews {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickMoreInfo() {
+	/*public void clickManageNewsMoreInfo() {
 		// moreinfo.click();
 		PageUtility pageutility = new PageUtility();
 		// pageutility.scrollToElement(driver, moreinfo);
-		pageutility.actionClick(driver, moreinfo);
-	}
+		pageutility.actionClick(driver, managenewsmoreinfo);
+	}*/
 
-	public void clickNewButton() {
+	public ManageNews clickNewButton() {
 		// newbtn.click();
 		PageUtility pageutility = new PageUtility();
 		pageutility.scrollToElement(driver, newbtn);
 		newbtn.click(); // Direct click is fine here*/
+		return this;
 	}
 
-	public void enterNews(String news2) {
+	public ManageNews enterNews(String news2) {
 		news.sendKeys(news2);
+		return this;
 	}
 
-	public void clickSave() {
+	public ManageNews clickSave() {
 		// savebtn.click();
 		PageUtility pageutility = new PageUtility();
 		// pageutility.scrollToElement(driver, savebtn);
 		pageutility.clickUsingJS(driver, savebtn); // For reliable click
+		return this;
 	}
 
 	/*

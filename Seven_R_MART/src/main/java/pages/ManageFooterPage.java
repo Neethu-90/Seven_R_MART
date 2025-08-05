@@ -7,8 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ManageFooterPage {
 
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-footertext' and @class='small-box-footer']")
-	WebElement moreinfo;
+	//@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-footertext' and @class='small-box-footer']")
+	//WebElement managefootermoreinfo;
 	@FindBy(xpath = "//a[@class='btn btn-sm btn btn-primary btncss']")
 	WebElement action;
 	@FindBy(xpath = "//textarea[@id='content']")
@@ -27,30 +27,34 @@ public class ManageFooterPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickMoreinfo() {
-		moreinfo.click();
-	}
+	/*public void clickMoreinfo() {
+		managefootermoreinfo.click();
+	}*/
 
-	public void clickAction() {
+	public ManageFooterPage clickAction() {
 		action.click();
+		return this;
 	}
 
-	public void Addaddress(String newadd) {
+	public ManageFooterPage Addaddress(String newadd) {
 		address.clear();
 		address.sendKeys(newadd);
+		return this;
 	}
 
-	public void AddEmail(String newmail) {
+	public ManageFooterPage AddEmail(String newmail) {
 		email.clear();
 		email.sendKeys(newmail);
+		return this;
 	}
 
 	public boolean isUpadateButtonDisplayed() {
 		return update.isDisplayed();
 	}
 
-	public void updateDetails() {
+	public ManageFooterPage updateDetails() {
 		update.click();
+		return this;
 	}
 
 	public boolean isAlertDisplayed() {

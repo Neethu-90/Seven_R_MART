@@ -1,4 +1,4 @@
-package utility;
+package utility;//reduce code repetition
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;

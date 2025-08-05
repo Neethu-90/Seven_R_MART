@@ -1,5 +1,5 @@
 package generatereport;
-
+//customize our report.
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;

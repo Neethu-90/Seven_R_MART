@@ -12,7 +12,7 @@ import utility.WaitUtility;
 public class AdminPage {
 
 	//@FindBy(xpath = "//a[contains(@href,'list-admin') and contains(@class,'small-box-footer')]") WebElement adminusers;
-	@FindBy(xpath="(//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin'])[1]") WebElement adminusers;
+	//@FindBy(xpath="(//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin'])[1]") WebElement adminusersmoreinfo;
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	WebElement newadmin;
 	@FindBy(xpath = "//input[@class='form-control' and @name='username']")
@@ -41,44 +41,51 @@ public class AdminPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickAdminUsers() {
+	/*public void clickAdminUsersmoreinfo() {
 		//adminusers.click();
 		PageUtility page=new PageUtility();
-		page.clickUsingJS(driver, adminusers);
+		page.clickUsingJS(driver, adminusersmoreinfo);
 		
-	}
+	}*/
 
-	public void clickNewAdmin() {
+	public AdminPage clickNewAdmin() {
 		newadmin.click();
+		return this;
 	}
 
-	public void enterUsername(String newusername) {
+	public AdminPage enterUsername(String newusername) {
 		enterusername.sendKeys(newusername);
+		return this;
 	}
 
-	public void enterPassword(String newpassword) {
+	public AdminPage enterPassword(String newpassword) {
 		enterpassword.sendKeys(newpassword);
+		return this;
 	}
 
-	public void clearAndEnterUsername(String newusername) {
+	public AdminPage clearAndEnterUsername(String newusername) {
 		enterusername.clear();
 		enterusername.sendKeys(newusername);
+		return this;
 	}
 
-	public void clearAndEnterPassword(String newpassword) {
+	public AdminPage clearAndEnterPassword(String newpassword) {
 		enterpassword.clear();
 		enterpassword.sendKeys(newpassword);
+		return this;
 	}
 
-	public void selectType() {
+	public AdminPage selectType() {
 		// Select select=new Select(usertype);
 		// select.selectByVisibleText("Staff");
 		PageUtility pageutility = new PageUtility();
 		pageutility.selectByVisibleText(usertype, "Staff");
+		return this;
 	}
 
-	public void save() {
+	public AdminPage save() {
 		savebutton.click();
+		return this;
 	}
 
 	
@@ -89,13 +96,15 @@ public class AdminPage {
 	/*public Boolean dismissAlertIsDisplayed() {
 		return dismissalert.isDisplayed();
 	}*/
-	public void clickUpdatebtnIcon() {
+	public AdminPage clickUpdatebtnIcon() {
 		//updateicon.click();
 		PageUtility page=new PageUtility();
 		page.clickUsingJS(driver, updateicon);
+		return this;
 	}
-	public void update() {
+	public AdminPage update() {
 		update.click();
+		return this;
 	}
 
 	

@@ -1,6 +1,6 @@
 package utility;
 
-import com.github.javafaker.Faker;
+import com.github.javafaker.Faker;//to generate random test data.This helps us avoid using the same data every time and makes our tests more realistic and dynamic."
 
 public class FakerUtility {
 

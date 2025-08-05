@@ -7,7 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
+/* used to handle wait conditions like waiting for an element to be visible or clickable.
+It helps make the test more stable by avoiding issues like element not found or not interactable errors."*/
 public class WaitUtility {
 	public static final int IMPLICITWAIT = 10;
 	public static final int EXPLICITWAIT = 10;

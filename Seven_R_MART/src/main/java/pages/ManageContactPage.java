@@ -8,8 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 
 public class ManageContactPage {
 
-	@FindBy(xpath = "//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-contact']")
-	WebElement moreInfo;
+	//@FindBy(xpath = "//a[@class='small-box-footer' and @href='https://groceryapp.uniqassosiates.com/admin/list-contact']")
+	//WebElement managecontactmoreInfo;
 	@FindBy(xpath = "//a[@class='btn btn-sm btn btn-primary btncss']")
 	WebElement actions;
 	@FindBy(xpath = "//input[@id='email']")
@@ -28,24 +28,27 @@ public class ManageContactPage {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void clickMoreInfo() {
-		moreInfo.click();
-	}
+	/*public void clickMoreInfo() {
+		managecontactmoreInfo.click();
+	}*/
 
-	public void clickActions() {
+	public ManageContactPage clickActions() {
 		actions.click();
+		return this;
 	}
 
-	public void updateEmail(String mailId) {
+	public ManageContactPage updateEmail(String mailId) {
 		email.clear();
 		email.sendKeys(mailId);
+		return this;
 	}
 
-	public void updateDetails() {
+	public ManageContactPage updateDetails() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);", update);
 		js.executeScript("arguments[0].click();", update);
 		// update.click();
+		return this;
 	}
 
 	public boolean isGreenAlertDisplayed() {
